@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ActionButton from "./components/ActionButton";
+import AvailabilityTest from "./components/AvailabilityTest";
 import NetworkSettingsForm from "./components/NetworkSettingsForm";
 import { NetworkSettings } from "./types/NetworkSettings";
 
@@ -13,23 +14,24 @@ function App() {
     <div className="flex flex-col">
       <div>
         Requests will go to http://{networkSettings.address}:
-        {networkSettings.port}
+        {networkSettings.port} |{" "}
+        <AvailabilityTest networkSettings={networkSettings} />
       </div>
       <div className="flex flex-col gap-2 p-2">
         <ActionButton
           label="Vignette"
           networkSettings={networkSettings}
-          path="/StartVignette"
+          path="StartVignette"
         />
         <ActionButton
           label="Depth of Field"
           networkSettings={networkSettings}
-          path="/StartDOF"
+          path="StartDOF"
         />
         <ActionButton
           label="Color Loss"
           networkSettings={networkSettings}
-          path="/StartColorLoss"
+          path="StartColorLoss"
         />
       </div>
       <NetworkSettingsForm
