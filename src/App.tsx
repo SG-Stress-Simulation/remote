@@ -12,9 +12,7 @@ function App() {
 
   return (
     <div className="flex flex-col">
-      <div>
-        Requests will go to http://{networkSettings.address}:
-        {networkSettings.port} |{" "}
+      <div className="p-2 bg-slate-300">
         <AvailabilityTest networkSettings={networkSettings} />
       </div>
       <div className="flex flex-col gap-2 p-2">
@@ -34,10 +32,6 @@ function App() {
           path="StartColorLoss"
         />
       </div>
-      <NetworkSettingsForm
-        networkSettings={networkSettings}
-        setNetworkSettings={setNetworkSettings}
-      />
     </div>
   );
 }

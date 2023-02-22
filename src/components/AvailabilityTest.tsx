@@ -11,7 +11,7 @@ export default function AvailabilityTest({ networkSettings }: Props) {
   useEffect(() => {
     let interval = setInterval(() => {
       console.log("Checking availability");
-      fetch(endpointBuilder(networkSettings, "Health"))
+      fetch("/Health")
         .then((response) => {
           if (response.status === 200) {
             setAvailability(true);

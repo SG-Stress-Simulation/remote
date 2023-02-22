@@ -3,13 +3,12 @@ import { NetworkSettings } from "../types/NetworkSettings";
 
 type Props = {
   label: string;
-  networkSettings: NetworkSettings;
   path: string;
 };
 
-export default function ActionButton({ label, networkSettings, path }: Props) {
+export default function ActionButton({ label, path }: Props) {
   function triggerAction() {
-    fetch(endpointBuilder(networkSettings, path), {
+    fetch(`/${path}`, {
       method: "GET",
     }).then((response) => {
       if (response.ok) {
