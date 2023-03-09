@@ -42,6 +42,13 @@ function App() {
           inifinite={inifinite}
         />
         <ActionButton
+          label="Firecracker"
+          path="StartFirecracker"
+          intensity={intensity}
+          duration={duration}
+          inifinite={inifinite}
+        />
+        <ActionButton
           style="danger"
           label="Stop All Effects"
           path="StopEffects"
